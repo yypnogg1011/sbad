@@ -1,7 +1,7 @@
 FROM conda/miniconda3
 
-RUN apt-get update -y && apt-get install wget -y
+WORKDIR /
 
-RUN wget https://raw.githubusercontent.com/RomeroBarata/skeleton_based_anomaly_detection/master/environment.yml
+RUN git https://github.com/RomeroBarata/skeleton_based_anomaly_detection.git
 
-RUN conda env create -f environment.yml
+RUN conda env create -f /skeleton_based_anomaly_detection/environment.yml
